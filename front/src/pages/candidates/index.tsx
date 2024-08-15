@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { DataTableSkeleton } from '@/components/shared/data-table-skeleton';
 import { Breadcrumbs } from '@/components/shared/breadcrumbs';
 
-export default function CandidatePage() {
+export default function StudentPage() {
   const [searchParams] = useSearchParams();
   const page = Number(searchParams.get('page') || 1);
   const pageLimit = Number(searchParams.get('limit') || 10);
@@ -30,11 +30,11 @@ export default function CandidatePage() {
 
   return (
     <div className="p-4 md:p-8">
-      <PageHead title="Candidate Page" />
+      <PageHead title="Student Management | App" />
       <Breadcrumbs
         items={[
-          { title: 'Overview', link: '/' },
-          { title: 'Candidates', link: '/students' }
+          { title: 'Dashboard', link: '/' },
+          { title: 'Students', link: '/students' }
         ]}
       />
       <StudentsTable

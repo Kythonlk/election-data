@@ -8,17 +8,11 @@ export const navItems: NavItem[] = [
     label: 'Dashboard'
   },
   {
-    title: 'Students',
-    href: '/student',
+    title: 'Candidates',
+    href: '/candidates',
     icon: 'user',
-    label: 'Student'
+    label: 'Candidates'
   },
-  {
-    title: 'Login',
-    href: '/login',
-    icon: 'login',
-    label: 'Login'
-  }
 ];
 
 export const users = [
