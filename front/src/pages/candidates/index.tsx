@@ -38,10 +38,6 @@ export default function StudentPage() {
         ]}
       />
       <StudentsTable
-        users={users}
-        page={page}
-        totalUsers={totalUsers}
-        pageCount={pageCount}
       />
     </div>
   );

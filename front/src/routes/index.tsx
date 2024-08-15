@@ -6,13 +6,11 @@ import { Navigate, Outlet, useRoutes } from 'react-router-dom';
 const DashboardLayout = lazy(
   () => import('@/components/layout/dashboard-layout')
 );
-const SignInPage = lazy(() => import('@/pages/auth/signin'));
 const DashboardPage = lazy(() => import('@/pages/dashboard'));
 const CandidatePage = lazy(() => import('@/pages/candidates'));
-const StudentPage = lazy(() => import('@/pages/students'));
-const StudentDetailPage = lazy(
-  () => import('@/pages/students/StudentDetailPage')
-);
+// const StudentDetailPage = lazy(
+//   () => import('@/pages/students/StudentDetailPage')
+// );
 
 // ----------------------------------------------------------------------
 
@@ -33,14 +31,6 @@ export default function AppRouter() {
           index: true
         },
         {
-          path: 'student',
-          element: <StudentPage />
-        },
-        {
-          path: 'student/details',
-          element: <StudentDetailPage />
-        },
-        {
           path: 'form',
           element: <FormPage />
         },
@@ -53,11 +43,6 @@ export default function AppRouter() {
   ];
 
   const publicRoutes = [
-    {
-      path: '/login',
-      element: <SignInPage />,
-      index: true
-    },
     {
       path: '/404',
       element: <NotFound />
