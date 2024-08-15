@@ -22,28 +22,24 @@ const electionData = [
     title: "A.K.Dissanayake",
     votes: "5,231,000",
     percentage: "45%",
-    description: "+2% since last update",
     icon: akd,
   },
   {
     title: "Ranil Wikramasinghe",
     votes: "4,500,500",
     percentage: "38%",
-    description: "+1.5% since last update",
     icon: ranil,
   },
   {
     title: "Namal Rajapaksha",
     votes: "1,200,000",
     percentage: "10%",
-    description: "+0.3% since last update",
     icon: namal,
   },
   {
     title: "Sajith Premadasa",
     votes: "500,000",
     percentage: "7%",
-    description: "+0.1% since last update",
     icon: sajith,
   }
 ];
@@ -65,7 +61,7 @@ export default function DashboardPage() {
                    <img src={candidate.icon} alt="" className='w-16 h-16 rounded-full object-cover' />
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold flex justify-between">{candidate.votes} <span className="text-base text-muted-foreground text-right">{candidate.percentage}</span></div>
+                    <div className="text-2xl font-bold flex justify-between items-end">{candidate.votes} <span className="text-base text-muted-foreground text-right">{candidate.percentage}</span></div>
                   </CardContent>
                 </Card>
               ))}
