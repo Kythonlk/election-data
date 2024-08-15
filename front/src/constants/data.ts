@@ -13,6 +13,12 @@ export const navItems: NavItem[] = [
     icon: 'user',
     label: 'Candidates'
   },
+  {
+    title: 'Districts',
+    href: '/districts',
+    icon: 'map',
+    label: 'Districts'
+  },
 ];
 
 export const users = [

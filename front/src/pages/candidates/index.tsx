@@ -21,11 +21,11 @@ export default function StudentPage() {
 
   return (
     <div className="p-4 md:p-8">
-      <PageHead title="Student Management | App" />
+      <PageHead title="Election 2024 | App" />
       <Breadcrumbs
         items={[
           { title: 'Dashboard', link: '/' },
-          { title: 'Students', link: '/students' }
+          { title: 'Candidates', link: '/candidates' }
         ]}
       />
       <CandidateTable />

@@ -8,6 +8,7 @@ const DashboardLayout = lazy(
 );
 const DashboardPage = lazy(() => import('@/pages/dashboard'));
 const CandidatePage = lazy(() => import('@/pages/candidates'));
+const DistrictsPage = lazy(() => import('@/pages/district'));
 // const StudentDetailPage = lazy(
 //   () => import('@/pages/students/StudentDetailPage')
 // );
@@ -37,6 +38,10 @@ export default function AppRouter() {
         {
           path: 'candidates',
           element: <CandidatePage />
+        },
+        {
+          path: 'districts',
+          element: <DistrictsPage />
         }
       ]
     }

@@ -1,4 +1,3 @@
-import * as React from 'react';
 const districts = {
   Colombo: '#1f77b4',
   Galle: '#ff7f0e',
