@@ -1,8 +1,8 @@
 import PageHead from '@/components/shared/page-head';
 import CandidateTable from './components/students-table';
-import { DataTableSkeleton } from '@/components/shared/data-table-skeleton';
+// import { DataTableSkeleton } from '@/components/shared/data-table-skeleton';
 import { Breadcrumbs } from '@/components/shared/breadcrumbs';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export default function StudentPage() {
   // const [Loading, setLoading] = useState(true);

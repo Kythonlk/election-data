@@ -25,19 +25,19 @@ export default function ElectionResultsChart() {
       <BarChart data={electionData}>
         <XAxis
           dataKey="candidate"
-          stroke="#888888"
+          stroke="#fff"
           fontSize={12}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          stroke="#888888"
+          stroke="#fff"
           fontSize={12}
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) => `${value.toLocaleString()}`}
         />
-        <Bar dataKey="votes" fill="#4CAF50" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="votes" fill="#fff" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
