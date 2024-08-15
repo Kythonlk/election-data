@@ -7,55 +7,20 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
+import RandomVotes from '@/constants/random-votes';
+import { useEffect, useState } from 'react';
 
 export default function DistrictTable() {
+  const [districtData, setDistrictData] = useState<any>([]);
 
-  const districts = [
-    {
-      name: 'Colombo',
-      leadingCandidate: 'A. B. Silva',
-      party: 'SLPP',
-      votes: 5000,
-      percentage: 52,
-      details: 'Colombo district is the capital region of Sri Lanka.'
-    },
-    {
-      name: 'Galle',
-      leadingCandidate: 'R. Perera',
-      party: 'UNP',
-      votes: 3200,
-      percentage: 48,
-      details: 'Galle district is known for its historical importance.'
-    },
-    {
-      name: 'Kandy',
-      leadingCandidate: 'S. Fernando',
-      party: 'JVP',
-      votes: 2100,
-      percentage: 21,
-      details: 'Kandy district is famous for the Temple of the Tooth.'
-    },
-    {
-      name: 'Jaffna',
-      leadingCandidate: 'M. Kumar',
-      party: 'TNA',
-      votes: 6450,
-      percentage: 64,
-      details: 'Jaffna district is the cultural capital of Tamils in Sri Lanka.'
-    },
-    {
-      name: 'Matara',
-      leadingCandidate: 'P. Gunawardena',
-      party: 'SLFP',
-      votes: 3980,
-      percentage: 40,
-      details: 'Matara is known for its historical fort and natural beauty.'
-    }
-  ];
+  useEffect(() => {
+    setDistrictData(RandomVotes());  
+  }, []); 
 
   return (
-    <div className="py-8">
-      <Table>
+    <div className="py-8 w-full">
+         <div className="relative overflow-x-auto">
+         <Table className="min-w-full">
         <TableCaption>District-Wise Election Results</TableCaption>
         <TableHeader>
           <TableRow>
@@ -67,7 +32,7 @@ export default function DistrictTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {districts.map((district, index) => (
+          {districtData.map((district, index) => (
               <TableRow
                 className="cursor-pointer" 
               >
@@ -80,6 +45,7 @@ export default function DistrictTable() {
           ))}
         </TableBody>
       </Table>
+    </div>
     </div>
   );
 }

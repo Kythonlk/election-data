@@ -7,41 +7,34 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
+import { useEffect, useState } from 'react';
 
-// type TStudentsTableProps = {
-//   rank: number;
-//   candidateName: string;
-//   party: string;
-//   votes: number;
-//   percentage: number;
-// };
+interface Candidate {
+  rank: number;
+  candidateName: string;
+  party: string;
+  votes: number;
+  percentage: string;
+}
 
 export default function CandidateTable() {
-  const candidates = [
-    {
-      rank: 1,
-      candidateName: 'A. B. Silva',
-      party: 'SLPP',
-      votes: 5230,
-      percentage: 0.52
-    },
-    { rank : 2, candidateName: 'R. Perera', party: 'UNP', votes: 4875, percentage: 0.48 },
-    {
-      rank : 3,
-      candidateName: 'S. Fernando',
-      party: 'JVP',
-      votes: 2100,
-      percentage: 0.21
-    },
-    { rank : 4,candidateName: 'M. Kumar', party: 'TNA', votes: 6450, percentage: 0.64 },
-    {
-      rank : 5,
-      candidateName: 'P. Gunawardena',
-      party: 'SLFP',
-      votes: 3980,
-      percentage: 0.4
-    }
-  ];
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/candidates.json'); 
+        const data = await response.json();
+        
+        setCandidates(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
   return (
     <>
       <div className="py-8">

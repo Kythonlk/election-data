@@ -2,19 +2,19 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 const electionData = [
   {
-    candidate: 'Candidate A',
+    candidate: 'AKD',
     votes: Math.floor(Math.random() * 5000000) + 1000000,
   },
   {
-    candidate: 'Candidate B',
+    candidate: 'Sajith',
     votes: Math.floor(Math.random() * 5000000) + 1000000,
   },
   {
-    candidate: 'Candidate C',
+    candidate: 'Namal',
     votes: Math.floor(Math.random() * 5000000) + 1000000,
   },
   {
-    candidate: 'Candidate D',
+    candidate: 'Ranil',
     votes: Math.floor(Math.random() * 5000000) + 1000000,
   }
 ];
