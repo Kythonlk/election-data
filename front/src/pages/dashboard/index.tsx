@@ -11,6 +11,7 @@ import {
   TabsContent,
 } from '@/components/ui/tabs.js';
 import RecentSales from './components/recent-sales.js';
+import Image from '@/components/shared/map.svg'
 
 export default function DashboardPage() {
   return (
@@ -127,12 +128,12 @@ export default function DashboardPage() {
                 </CardContent>
               </Card>
             </div>
+            <img src={Image} alt="dashboard" className="h-1/3 w-1/3" />
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-4">
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
-                <CardContent className="pl-2">{/* <Overview /> */}</CardContent>
               </Card>
               <Card className="col-span-4 md:col-span-3">
                 <CardHeader>
