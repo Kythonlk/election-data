@@ -50,6 +50,7 @@ export default function Sidebar({ className }: SidebarProps) {
           </div>
         </div>
       </div>
+      <a className='absolute bottom-10 left-10' href='https://github.com/kythonlk'>Dev by <span className='underline'>Kythonlk</span></a>
     </nav>
   );
 }
