@@ -21,28 +21,29 @@ const electionData = [
   {
     title: "A.K.Dissanayake",
     votes: "5,231,000",
-    percentage: "45%",
+    percentage: "53%",
     icon: akd,
   },
   {
     title: "Ranil Wikramasinghe",
     votes: "4,500,500",
-    percentage: "38%",
+    percentage: "6%",
     icon: ranil,
   },
   {
     title: "Namal Rajapaksha",
     votes: "1,200,000",
-    percentage: "10%",
+    percentage: "11%",
     icon: namal,
   },
   {
     title: "Sajith Premadasa",
     votes: "500,000",
-    percentage: "7%",
+    percentage: "20%",
     icon: sajith,
   }
 ];
+
 
 export default function DashboardPage() {
   return (

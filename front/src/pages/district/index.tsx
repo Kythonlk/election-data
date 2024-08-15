@@ -1,5 +1,5 @@
 import PageHead from '@/components/shared/page-head';
-import CandidateTable from './components/students-table';
+import CandidateTable from './components/table';
 import { Breadcrumbs } from '@/components/shared/breadcrumbs';
 
 export default function DistrictsPage() {

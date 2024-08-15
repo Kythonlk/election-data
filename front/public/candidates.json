@@ -1,156 +1,156 @@
 [
-    {
-      "rank": 1,
-      "candidateName": "Anura Kumara Disanayake",
-      "party": "NPP",
-      "votes": 3482,
-      "percentage": "2.85"
-    },
-    {
-      "rank": 2,
-      "candidateName": "Sarath Fonseka",
-      "party": "Independent",
-      "votes": 7921,
-      "percentage": "6.49"
-    },
-    {
-      "rank": 3,
-      "candidateName": "PWSK Bandaranayake",
-      "party": "JSP",
-      "votes": 9542,
-      "percentage": "7.82"
-    },
-    {
-      "rank": 4,
-      "candidateName": "Nuwan Bopage",
-      "party": "PSA",
-      "votes": 1223,
-      "percentage": "1.00"
-    },
-    {
-      "rank": 5,
-      "candidateName": "Akmeemana Dayarathana",
-      "party": "Independent",
-      "votes": 3164,
-      "percentage": "2.59"
-    },
-    {
-      "rank": 6,
-      "candidateName": "Ajantha de Zoysa",
-      "party": "RJP",
-      "votes": 6427,
-      "percentage": "5.27"
-    },
-    {
-      "rank": 7,
-      "candidateName": "Oshala Herath",
-      "party": "NIF",
-      "votes": 3832,
-      "percentage": "3.14"
-    },
-    {
-      "rank": 8,
-      "candidateName": "Siritunga Jayasuriya",
-      "party": "USP",
-      "votes": 791,
-      "percentage": "0.65"
-    },
-    {
-      "rank": 9,
-      "candidateName": "Sarath Keerthirathna",
-      "party": "Independent",
-      "votes": 973,
-      "percentage": "0.80"
-    },
-    {
-      "rank": 10,
-      "candidateName": "ASP Liyanage",
-      "party": "SLLP",
-      "votes": 8424,
-      "percentage": "6.90"
-    },
-    {
-      "rank": 11,
-      "candidateName": "KK Piyadasa",
-      "party": "Independent",
-      "votes": 7552,
-      "percentage": "6.19"
-    },
-    {
-      "rank": 12,
-      "candidateName": "Janaka Ratnayake",
-      "party": "Independent",
-      "votes": 2816,
-      "percentage": "2.31"
-    },
-    {
-      "rank": 13,
-      "candidateName": "Battaramulle Seelarathana",
-      "party": "JP",
-      "votes": 8176,
-      "percentage": "6.70"
-    },
-    {
-      "rank": 14,
-      "candidateName": "Ranil Wickramasinghe",
-      "party": "Independent",
-      "votes": 6513,
-      "percentage": "5.34"
-    },
-    {
-      "rank": 15,
-      "candidateName": "Sajith Premadasa",
-      "party": "SJB",
-      "votes": 9845,
-      "percentage": "8.07"
-    },
-    {
-      "rank": 16,
-      "candidateName": "Siripala Amarasinghe",
-      "party": "Independent",
-      "votes": 4254,
-      "percentage": "3.49"
-    },
-    {
-      "rank": 17,
-      "candidateName": "KR Krishan",
-      "party": "AJP",
-      "votes": 903,
-      "percentage": "0.74"
-    },
-    {
-      "rank": 18,
-      "candidateName": "Ananda Kularatne",
-      "party": "Independent",
-      "votes": 6518,
-      "percentage": "5.34"
-    },
-    {
-      "rank": 19,
-      "candidateName": "Sarath Manamendra",
-      "party": "NSU",
-      "votes": 5990,
-      "percentage": "4.91"
-    },
-    {
-      "rank": 20,
-      "candidateName": "Dilith Jayaweera",
-      "party": "MJP",
-      "votes": 7955,
-      "percentage": "6.52"
-    },
-    {
-      "rank": 21,
-      "candidateName": "Namal Rajapakse",
-      "party": "SLPP",
-      "votes": 7987,
-      "percentage": "6.55"
-    },
-    {
-      "rank": 22,
-      "candidateName": "Wijeyadasa Rajapakshe",
-      "party": "JPP",
-      "votes": 7724,
-      "percentage": "6.33"
-    }
-  ]
+  {
+    "candidateName": "Anura Kumara Disanayake",
+    "party": "NPP",
+    "votes": 683,
+    "percentage": "53.03",
+    "rank": 1
+  },
+  {
+    "candidateName": "Sajith Premadasa",
+    "party": "SJB",
+    "votes": 258,
+    "percentage": "20.03",
+    "rank": 2
+  },
+  {
+    "candidateName": "Namal Rajapakse",
+    "party": "SLPP",
+    "votes": 142,
+    "percentage": "11.02",
+    "rank": 3
+  },
+  {
+    "rank": 4,
+    "candidateName": "Wijeyadasa Rajapakshe",
+    "party": "JPP",
+    "votes": 107,
+    "percentage": "8.31"
+  },
+  {
+    "candidateName": "Ranil Wickramasinghe",
+    "party": "Independent",
+    "votes": 77,
+    "percentage": "5.98",
+    "rank": 5
+  },
+  {
+    "rank": 6,
+    "candidateName": "Dilith Jayaweera",
+    "party": "MJP",
+    "votes": 57,
+    "percentage": "4.43"
+  },
+  {
+    "rank": 7,
+    "candidateName": "Ananda Kularatne",
+    "party": "Independent",
+    "votes": 32,
+    "percentage": "2.48"
+  },
+  {
+    "rank": 8,
+    "candidateName": "KR Krishan",
+    "party": "AJP",
+    "votes": 21,
+    "percentage": "1.63"
+  },
+  {
+    "rank": 9,
+    "candidateName": "Siripala Amarasinghe",
+    "party": "Independent",
+    "votes": 21,
+    "percentage": "1.63"
+  },
+  {
+    "rank": 10,
+    "candidateName": "KK Piyadasa",
+    "party": "Independent",
+    "votes": 13,
+    "percentage": "1.01"
+  },
+  {
+    "rank": 11,
+    "candidateName": "Battaramulle Seelarathana",
+    "party": "JP",
+    "votes": 11,
+    "percentage": "0.85"
+  },
+  {
+    "rank": 12,
+    "candidateName": "ASP Liyanage",
+    "party": "SLLP",
+    "votes": 11,
+    "percentage": "0.85"
+  },
+  {
+    "rank": 13,
+    "candidateName": "Oshala Herath",
+    "party": "NIF",
+    "votes": 10,
+    "percentage": "0.78"
+  },
+  {
+    "rank": 14,
+    "candidateName": "Sarath Manamendra",
+    "party": "NSU",
+    "votes": 9,
+    "percentage": "0.70"
+  },
+  {
+    "rank": 15,
+    "candidateName": "Sarath Keerthirathna",
+    "party": "Independent",
+    "votes": 9,
+    "percentage": "0.70"
+  },
+  {
+    "rank": 16,
+    "candidateName": "PWSK Bandaranayake",
+    "party": "JSP",
+    "votes": 8,
+    "percentage": "0.62"
+  },
+  {
+    "rank": 17,
+    "candidateName": "Akmeemana Dayarathana",
+    "party": "Independent",
+    "votes": 6,
+    "percentage": "0.47"
+  },
+  {
+    "rank": 18,
+    "candidateName": "Ajantha de Zoysa",
+    "party": "RJP",
+    "votes": 5,
+    "percentage": "0.39"
+  },
+  {
+    "rank": 19,
+    "candidateName": "Siritunga Jayasuriya",
+    "party": "USP",
+    "votes": 4,
+    "percentage": "0.31"
+  },
+  {
+    "rank": 20,
+    "candidateName": "Nuwan Bopage",
+    "party": "PSA",
+    "votes": 3,
+    "percentage": "0.23"
+  },
+  {
+    "rank": 21,
+    "candidateName": "Janaka Ratnayake",
+    "party": "Independent",
+    "votes": 2,
+    "percentage": "0.16"
+  },
+  {
+    "rank": 22,
+    "candidateName": "Sarath Fonseka",
+    "party": "Independent",
+    "votes": 1,
+    "percentage": "0.08"
+  }
+]

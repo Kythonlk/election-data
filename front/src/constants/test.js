@@ -122,29 +122,55 @@ const allCandidates = [
   }
   
   function generateCandidateData(candidates) {
-    const akdIndex = candidates.findIndex(c => c["first-name"] === "Anura Kumara" && c["sec-name"] === "Disanayake");
-    if (akdIndex !== -1 && akdIndex !== 0) { 
-      const akd = candidates.splice(akdIndex, 1)[0]; 
-      candidates.unshift(akd); 
-    }
+    const predefinedData = {
+      "Anura Kumara Disanayake": { percentage: 53 },
+      "Sajith Premadasa": { percentage: 20 },
+      "Namal Rajapakse": { percentage: 11 },
+      "Ranil Wickramasinghe": { percentage: 6 }
+    };
   
-    const candidateData = candidates.map((candidate, index) => ({
-      rank: index + 1,
-      candidateName: `${candidate["first-name"]} ${candidate["sec-name"]}`,
-      party: candidate.party,
-      votes: generateRandomVotes(),
-      percentage: 0 
-    }));
+    const totalPercentage = Object.values(predefinedData).reduce((sum, { percentage }) => sum + percentage, 0);
+    const totalVotes = generateRandomVotes();
+    let remainingVotes = totalVotes;
   
-    const totalVotes = candidateData.reduce((sum, candidate) => sum + candidate.votes, 0);
+    const candidateData = Object.keys(predefinedData).map(name => {
+      const { percentage } = predefinedData[name];
+      const votes = (totalVotes * (percentage / 100)).toFixed();
+      remainingVotes -= votes;
+      return {
+        candidateName: name,
+        party: candidates.find(c => `${c["first-name"]} ${c["sec-name"]}` === name).party,
+        votes: parseInt(votes),
+        percentage: percentage.toFixed(2)
+      };
+    });
+  
+    const remainingCandidates = candidates.filter(c => !Object.keys(predefinedData).includes(`${c["first-name"]} ${c["sec-name"]}`));
+    remainingCandidates.forEach((candidate, index) => {
+      candidateData.push({
+        rank: candidateData.length + 1,
+        candidateName: `${candidate["first-name"]} ${candidate["sec-name"]}`,
+        party: candidate.party,
+        votes: generateRandomVotes(remainingVotes / (remainingCandidates.length - index)),
+        percentage: 0
+      });
+    });
+  
     candidateData.forEach(candidate => {
       candidate.percentage = calculatePercentage(candidate.votes, totalVotes);
+    });
+  
+    candidateData.sort((a, b) => a.votes - b.votes).reverse();
+    candidateData.forEach((candidate, index) => {
+      candidate.rank = index + 1;
     });
   
     return candidateData;
   }
   
-  const formattedCandidateData = generateCandidateData(allCandidates);
+
   
+  const formattedCandidateData = generateCandidateData(allCandidates);
   const jsonData = JSON.stringify(formattedCandidateData, null, 2); 
   console.log(jsonData);
+  
