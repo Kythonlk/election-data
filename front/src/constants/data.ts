@@ -21,6 +21,28 @@ export const navItems: NavItem[] = [
   },
 ];
 
+export const siItems: NavItem[] = [
+  {
+    title: 'ප්‍රධාන පුවරුව',
+    href: '/',
+    icon: 'dashboard',
+    label: 'ප්‍රධාන පුවරුව'
+  },
+  {
+    title: 'අපේක්ෂකයින්',
+    href: '/candidates',
+    icon: 'user',
+    label: 'අපේක්ෂකයින්' 
+  },
+  {
+    title: 'දිස්ත්‍රික්ක',
+    href: '/districts',
+    icon: 'map',
+    label: 'දිස්ත්‍රික්ක'
+  },
+];
+
+
 export const users = [
   {
     id: 1,
