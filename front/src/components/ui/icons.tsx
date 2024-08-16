@@ -29,6 +29,7 @@ import {
   User2Icon,
   UserX2Icon,
   MapPinned,
+  MessageCircleWarning,
   X
 } from 'lucide-react';
 
@@ -62,6 +63,7 @@ export const Icons = {
   moon: Moon,
   laptop: Laptop,
   map : MapPinned,
+  nope : MessageCircleWarning,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

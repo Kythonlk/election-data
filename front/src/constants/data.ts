@@ -19,6 +19,12 @@ export const navItems: NavItem[] = [
     icon: 'map',
     label: 'Districts'
   },
+  {
+    title: 'Election complaints',
+    href: '/offences',
+    icon: 'nope',
+    label: 'Election complaints'
+  },
 ];
 
 export const siItems: NavItem[] = [
@@ -39,6 +45,12 @@ export const siItems: NavItem[] = [
     href: '/districts',
     icon: 'map',
     label: 'දිස්ත්‍රික්ක'
+  },
+  {
+    title: 'මැතිවරණ පැමිණිලි',
+    href: '/offences',
+    icon: 'map',
+    label: 'මැතිවරණ පැමිණිලි'
   },
 ];
 
