@@ -11,8 +11,8 @@ import { useEffect, useState } from 'react';
 
 interface Candidate {
   rank: number;
-  candidateName: string;
-  party: string;
+  candidate: string;
+  english_party: string;
   votes: number;
   percentage: string;
 }
@@ -23,7 +23,7 @@ export default function CandidateTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/candidates.json'); 
+        const response = await fetch('/candidates_name.json'); 
         const data = await response.json();
         
         setCandidates(data);
@@ -34,7 +34,11 @@ export default function CandidateTable() {
 
     fetchData();
   }, []); 
-
+  // "candidate": "K.A. Kularathna",
+  // "english_name": "K. Ananda Kularathna",
+  // "english_party": "Independent",
+  // "sinhala_candidate": "කේ. ආනන්ද කුලරත්න",
+  // "sinhala_party": "ස්වාධීන"
   return (
     <>
       <div className="py-8">
@@ -52,8 +56,8 @@ export default function CandidateTable() {
             <TableBody>
               {candidates.map((candidate) => (
                 <TableRow key={candidate.rank}>
-                  <TableCell>{candidate.candidateName}</TableCell>
-                  <TableCell>{candidate.party}</TableCell>
+                  <TableCell>{candidate.candidate}</TableCell>
+                  <TableCell>{candidate.english_party}</TableCell>
                   <TableCell>{candidate.percentage}</TableCell>
                   <TableCell>{candidate.votes}</TableCell>
                   <TableCell className="text-right">
