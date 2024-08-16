@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Election Data Extraction</title>
+</head>
+
+<body>
+  <div id="data-container">
+  </div>
+  <button id="download-button">Download JSON</button>
+
+  <script>
+    const htmlSnippet = `
+  <div class="panel-group tablescraper-selected-table" id="accordion">
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false"
+          class="collapsed">Electorate Number 01 - Colombo</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>A</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Colombo North</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ColomboNorth_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>B</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Colombo Central</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ColomboCentral_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>C</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Borella</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_Borella_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>D</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Colombo East</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ColomboEast_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>E</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Colombo West</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ColomboWest_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>F</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Dehiwala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_Dehiwala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>G</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Ratmalana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_Rathmalana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>H</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Kolonnawa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Kolonnawa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>I</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Kotte</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_Kotte_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>J</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Kaduwela</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Kaduwela_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>K</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Avissawella</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Avissawella_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>L</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Homagama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Homagama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>M</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Maharagama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Maharagama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>N</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Kesbewa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_ Kesbawa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 42px;"><span
+                    style="font-size: 16px;"><strong>O</strong></span></td>
+                <td style="width: 675px; height: 42px;"><span style="font-size: 16px;">Moratuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Colombo/9_3_Moratuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed"
+          aria-expanded="false">Electorate Number 02- Gampaha</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Wattala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Wattala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Negombo</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Negambo_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Katana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Katana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Divulapitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Divulapititya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mirigama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Mirigama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Minuwangoda</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Minuwangoda_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Attanagalla</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Attanagalla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Gampaha</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Gampaha_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ja-Ela</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_JaEla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>J</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mahara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Mahara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>K</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Dompe</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Dompe_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>L</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Biyagama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Biyagama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>M</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kelaniya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Gampaha/9_3_Kelaniya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed"
+          aria-expanded="false">Electorate Number 03 - Kalutara</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 1.06946px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>A</strong></span></td>
+                <td style="width: 675px; height: 1.06946px;"><span style="font-size: 16px;">Panadura</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Panadura_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 21px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>B</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Bandaragama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Bandaragama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 21px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>C</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Horana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Horana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 21px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>D</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Bulathsinhala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Bulathsinhala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 21px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>E</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Matugama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Matugama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 21px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>F</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Kalutara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Kalutara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 19px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>G</strong></span></td>
+                <td style="width: 675px; height: 19px;"><span style="font-size: 16px;">Beruwala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Beruwala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 20px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>H</strong></span></td>
+                <td style="width: 675px; height: 20px;"><span style="font-size: 16px;">Agalawatta</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kalutara/9_3_Agalawatta_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed"
+          aria-expanded="false">Electorate Number 04 - Kandy</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Galagedara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Galagedara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Harispattuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Harispatthuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Pathadumbara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Pathadumbara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Udadumbara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Udadumbara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Teldeniya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Teldeniya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kundasale</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Kundasale_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Hewaheta</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Hewaheta_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Senkadagala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Senkadagala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kandy</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Mahanuwara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>J</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Yatinuwara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Yatinuwara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>K</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Udanuwara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Udunuwara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>L</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Gampola</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Gampola_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>M</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nawalapitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Mahanuwara/9_3_Nawalapitiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="collapsed"
+          aria-expanded="false">Electorate Number 05 - Matale</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Dambulla</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matale/9_3_Dambulla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Laggala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matale/9_3_Laggala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Matale</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matale/9_3_Matale_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Rattota</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matale/9_3_Rattota_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="collapsed"
+          aria-expanded="false">Electorate Number 06 - Nuwara Eliya</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nuwara Eliya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/NuwaraEliya/9_3_NuwraeleiyaMaskeliya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kotmale</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/NuwaraEliya/9_3_Kothmale_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Hanguranketha</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/NuwaraEliya/9_3_Hanguranketha_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Walapane</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/NuwaraEliya/9_3_Walapane_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="collapsed"
+          aria-expanded="false">Electorate Number 07 - Galle</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Balapitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Balapitiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ambalangoda</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Ambalangoda_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Karandeniya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Karandeniya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Bentara-Elpitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_BentaraElpitiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Hiniduma</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Hiniduma_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Baddegama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Baddegama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ratgama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Rathgama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Galle</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Galle_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Akmeemana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Akmeemana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>J</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Habaraduwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Galle/9_3_Habaraduwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8" class="collapsed"
+          aria-expanded="false">Electorate Number 08 - Matara</a>
+      </h4>
+    </div>
+    <div id="collapse8" class="panel-collapse collapse" aria-expanded="false" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>A</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Deniyaya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Deniyaya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>B</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Hakmana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Hakmana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>C</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Akuressa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Akuressa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>D</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Kamburupitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Kamburupitiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>E</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Devinuwara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Devinuwara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>F</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Matara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Matara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center; height: 21px;"><span
+                    style="font-size: 16px;"><strong>G</strong></span></td>
+                <td style="width: 675px; height: 21px;"><span style="font-size: 16px;">Weligama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Matara/9_3_Weligama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9" class="" aria-expanded="true">Electorate
+          Number 09 - Hambantota</a>
+      </h4>
+    </div>
+    <div id="collapse9" class="panel-collapse collapse show in" aria-expanded="true" style="">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mulkirigala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Hambantota/9_3_Mulkirigala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Beliatta</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Hambantota/9_3_Beliatta_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Tangalle</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Hambantota/9_3_Tangalle_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Tissamaharamaya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Hambantota/9_3_Tissamaharama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse10" class="collapsed"
+          aria-expanded="false">Electorate Number 10 - Jaffna</a>
+      </h4>
+    </div>
+    <div id="collapse10" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kayts</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Kayts_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Waddukkoddai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Waddukkoddai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kankasanturai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Kankasanturai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Manipai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Manipai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kopai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Kopai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Uduppidi</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Uduppidi_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Point Pedro</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_PointPedro_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Chawakachcheri</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Chawakachcheri_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nallur</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Nallur_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>J</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Jaffna</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Jaffna_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>K</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kilinochchi</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Jaffna/9_3_Kilinochchi_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse11" class="collapsed"
+          aria-expanded="false">Electorate Number 11 - Vanni</a>
+      </h4>
+    </div>
+    <div id="collapse11" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mannar</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Vanni/9_3_Mannar_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Vavuniya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Vanni/9_3_Vavuniya_2023_T.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mullaitivu</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Vanni/9_3_Mullautiv_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse12" class="collapsed"
+          aria-expanded="false">Electorate Number 12 - Batticaloa</a>
+      </h4>
+    </div>
+    <div id="collapse12" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 20px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>A</strong></span></td>
+                <td style="width: 675px; height: 20px;"><span style="font-size: 16px;">Kalkudah</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Batticaloa/9_3_Kalkudah_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 22px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>B</strong></span></td>
+                <td style="width: 675px; height: 22px;"><span style="font-size: 16px;">Batticaloa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Batticaloa/9_3_Batticaloa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 22px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>C</strong></span></td>
+                <td style="width: 675px; height: 22px;"><span style="font-size: 16px;">Padiruppu</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Batticaloa/9_3_Paddiruppu_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse13" class="collapsed"
+          aria-expanded="false">Electorate Number 13 - Digamadulla</a>
+      </h4>
+    </div>
+    <div id="collapse13" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ampara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Digamadulla/9_3_Ampara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Samanturai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Digamadulla/9_3_Sammanthurai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kalmunai</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Digamadulla/9_3_Kalmunai_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Potuvil</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Digamadulla/9_3_Pothuvil_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse14" class="collapsed"
+          aria-expanded="false">Electorate Number 14 - Trincomalee</a>
+      </h4>
+    </div>
+    <div id="collapse14" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Seruwila</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Trincomalee/9_3_Seruvilla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Trincomalee</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Trincomalee/9_3_Trincomalee_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mutur</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Trincomalee/9_3_Muthur_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse15" class="collapsed"
+          aria-expanded="false">Electorate Number 15 - Kurunegala</a>
+      </h4>
+    </div>
+    <div id="collapse15" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Galgamuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Galgamuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nikaweratiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Nikaweratiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Yapahuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Yapahuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Hiriyala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Hiriyala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Wariyapola</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Wariyapola_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Panduwasnuwara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Panduwasnuwara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Bingiriya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Bingiriya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Katugampola</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Katugampola_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kuliyapitiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Kuliyapitiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>J</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Dambadeniya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Dambadeniya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>K</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Polgahawela</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Polgahawela_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>L</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kurunegala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Kurunegala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>M</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mawathagama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Mawathagama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>N</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Dodangaslanda</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kurunegala/9_3_Dodangaslanda_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse16" class="collapsed"
+          aria-expanded="false">Electorate Number 16 - Puttalam</a>
+      </h4>
+    </div>
+    <div id="collapse16" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Puttalam</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Puttalam/9_3_Puttalam_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Anamaduwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Puttalam/9_3_Anamaduwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Chillaw</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Puttalam/9_3_Chilaw_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nattandiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Puttalam/9_3_Nattandiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Wennappuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Puttalam/9_3_Wennappuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse17" class="collapsed"
+          aria-expanded="false">Electorate Number 17 - Anuradhapura</a>
+      </h4>
+    </div>
+    <div id="collapse17" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Medawachchiya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_Medawachchiya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Horowpothana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_Horowpothana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Anuradhapura East</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_AnuradhapuraEast_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Anuradhapura West</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_AnuradhapuraWest_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kalawewa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_Kalawewa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mihintale</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_Mihinthale_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kekirawa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Anuradhapura/9_3_Kekirawa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse18" class="collapsed"
+          aria-expanded="false">Electorate Number 18 - Polonnaruwa</a>
+      </h4>
+    </div>
+    <div id="collapse18" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Minneriya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Polonnaruwa/9_3_Minneriya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Medirigiriya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Polonnaruwa/9_3_Medirigiriya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Polonnaruwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Polonnaruwa/9_3_Polonnaruwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse19" class="collapsed"
+          aria-expanded="false">Electorate Number 19 - Badulla</a>
+      </h4>
+    </div>
+    <div id="collapse19" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mahiyanganaya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Mahiyanganaya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Wiyaluwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Wiyaluwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Passara</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Passara_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Badulla</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Badulla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Hali-Ela</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Haliela_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Uva Paranagama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Uvaparanagama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Welimada</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Welimada_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Bandarawela</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Bandarawela_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Haputale</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Badulla/9_3_Haputhale_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse20" class="collapsed"
+          aria-expanded="false">Electorate Number 20 - Monaragala</a>
+      </h4>
+    </div>
+    <div id="collapse20" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 22px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>A</strong></span></td>
+                <td style="width: 675px; height: 22px;"><span style="font-size: 16px;">Bibila</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Monaragala/9_3_Bibila_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 22px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>B</strong></span></td>
+                <td style="width: 675px; height: 22px;"><span style="font-size: 16px;">Monaragala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Monaragala/9_3_Monaragala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; height: 22px; text-align: center;"><span
+                    style="font-size: 16px;"><strong>C</strong></span></td>
+                <td style="width: 675px; height: 22px;"><span style="font-size: 16px;">Wellawaya</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Monaragala/9_3_Wellawaya_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse21" class="collapsed"
+          aria-expanded="false">Electorate Number 21 - Ratnapura</a>
+      </h4>
+    </div>
+    <div id="collapse21" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Eheliyagoda</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Eheliyagoda_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ratnapura</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Ratnapura_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Pelmadulla</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Pelmadulla_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Balangoda</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Balangoda_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Rakwana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Rakwana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Nivithigala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Nivitigala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kalawana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Kalawana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kolonna</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Ratnapura/9_3_Kolonna_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default tablescraper-selected-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse22" class="collapsed"
+          aria-expanded="false">Electorate Number 22 - Kegalle</a>
+      </h4>
+    </div>
+    <div id="collapse22" class="panel-collapse collapse" aria-expanded="false">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table style="width: 100%;">
+            <tbody>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>A</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Dedigama</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Dedigama_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>B</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Galigamuwa</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Galigamuwa_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>C</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Kegalle</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Kegalle_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>D</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Rambukkana</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Rambukkana_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>E</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Mawanella</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Mawanella_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>F</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Aranayake</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Aranayake_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>G</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Yatiyantota</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Yatiyantota_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>H</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Ruwanwella</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Ruwanwella_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+              <tr style="height: 42px;">
+                <td style="width: 40px; text-align: center;"><span style="font-size: 16px;"><strong>I</strong></span>
+                </td>
+                <td style="width: 675px;"><span style="font-size: 16px;">Deraniyagala</span></td>
+                <td align="center"><a rel="noopener" type="election" size="sm"
+                    href="https://elections.gov.lk/web/wp-content/uploads/pdf/voters/9_3/Kegalle/9_3_Deraniyagala_2023.pdf"
+                    class="btn myButton btn-sm enabled btn-secondary">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+    function extractData(htmlSnippet) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlSnippet, 'text/html');
+
+      const electorates = [];
+
+      const electorateDivs = doc.querySelectorAll('.tablescraper-selected-row');
+
+      electorateDivs.forEach((electorateDiv) => {
+        const electorateName = electorateDiv
+          .querySelector('.panel-title a')
+          .textContent.trim()
+          .replace(/Electorate Number \d+ - /, ''); // Remove "Electorate Number XX - "
+
+        const areas = [];
+        const rows = electorateDiv.querySelectorAll('tbody tr');
+
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll('td');
+          const areaCode = cells[0].textContent.trim();
+          const areaName = cells[1].textContent.trim();
+
+          areas.push({
+            code: areaCode,
+            name: areaName,
+          });
+        });
+
+        electorates.push({
+          name: electorateName,
+          areas: areas,
+        });
+      });
+
+      return electorates;
+    }
+
+    const extractedData = extractData(htmlSnippet);
+
+    console.log(extractedData);
+    const jsonData = JSON.stringify(extractedData, null, 2);
+
+    function downloadJSON(data, filename) {
+      const blob = new Blob([data], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+
+      document.body.appendChild(link); // Required for Firefox
+      link.click();
+      link.remove(); // Clean up after download
+    }
+
+    document.getElementById('data-container').innerHTML = htmlSnippet;
+
+    // Add event listener to the download button
+    document.getElementById('download-button').addEventListener('click', () => {
+      const extractedData = extractData(htmlSnippet);
+      const jsonData = JSON.stringify(extractedData, null, 2);
+      downloadJSON(jsonData, 'election_data.json');
+    });
+  </script>
+</body>
+
+</html>

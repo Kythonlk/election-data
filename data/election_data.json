@@ -1,0 +1,752 @@
+[
+  {
+    "name": "Colombo",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Colombo North"
+      },
+      {
+        "code": "B",
+        "name": "Colombo Central"
+      },
+      {
+        "code": "C",
+        "name": "Borella"
+      },
+      {
+        "code": "D",
+        "name": "Colombo East"
+      },
+      {
+        "code": "E",
+        "name": "Colombo West"
+      },
+      {
+        "code": "F",
+        "name": "Dehiwala"
+      },
+      {
+        "code": "G",
+        "name": "Ratmalana"
+      },
+      {
+        "code": "H",
+        "name": "Kolonnawa"
+      },
+      {
+        "code": "I",
+        "name": "Kotte"
+      },
+      {
+        "code": "J",
+        "name": "Kaduwela"
+      },
+      {
+        "code": "K",
+        "name": "Avissawella"
+      },
+      {
+        "code": "L",
+        "name": "Homagama"
+      },
+      {
+        "code": "M",
+        "name": "Maharagama"
+      },
+      {
+        "code": "N",
+        "name": "Kesbewa"
+      },
+      {
+        "code": "O",
+        "name": "Moratuwa"
+      }
+    ]
+  },
+  {
+    "name": "Gampaha",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Wattala"
+      },
+      {
+        "code": "B",
+        "name": "Negombo"
+      },
+      {
+        "code": "C",
+        "name": "Katana"
+      },
+      {
+        "code": "D",
+        "name": "Divulapitiya"
+      },
+      {
+        "code": "E",
+        "name": "Mirigama"
+      },
+      {
+        "code": "F",
+        "name": "Minuwangoda"
+      },
+      {
+        "code": "G",
+        "name": "Attanagalla"
+      },
+      {
+        "code": "H",
+        "name": "Gampaha"
+      },
+      {
+        "code": "I",
+        "name": "Ja-Ela"
+      },
+      {
+        "code": "J",
+        "name": "Mahara"
+      },
+      {
+        "code": "K",
+        "name": "Dompe"
+      },
+      {
+        "code": "L",
+        "name": "Biyagama"
+      },
+      {
+        "code": "M",
+        "name": "Kelaniya"
+      }
+    ]
+  },
+  {
+    "name": "Kalutara",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Panadura"
+      },
+      {
+        "code": "B",
+        "name": "Bandaragama"
+      },
+      {
+        "code": "C",
+        "name": "Horana"
+      },
+      {
+        "code": "D",
+        "name": "Bulathsinhala"
+      },
+      {
+        "code": "E",
+        "name": "Matugama"
+      },
+      {
+        "code": "F",
+        "name": "Kalutara"
+      },
+      {
+        "code": "G",
+        "name": "Beruwala"
+      },
+      {
+        "code": "H",
+        "name": "Agalawatta"
+      }
+    ]
+  },
+  {
+    "name": "Kandy",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Galagedara"
+      },
+      {
+        "code": "B",
+        "name": "Harispattuwa"
+      },
+      {
+        "code": "C",
+        "name": "Pathadumbara"
+      },
+      {
+        "code": "D",
+        "name": "Udadumbara"
+      },
+      {
+        "code": "E",
+        "name": "Teldeniya"
+      },
+      {
+        "code": "F",
+        "name": "Kundasale"
+      },
+      {
+        "code": "G",
+        "name": "Hewaheta"
+      },
+      {
+        "code": "H",
+        "name": "Senkadagala"
+      },
+      {
+        "code": "I",
+        "name": "Kandy"
+      },
+      {
+        "code": "J",
+        "name": "Yatinuwara"
+      },
+      {
+        "code": "K",
+        "name": "Udanuwara"
+      },
+      {
+        "code": "L",
+        "name": "Gampola"
+      },
+      {
+        "code": "M",
+        "name": "Nawalapitiya"
+      }
+    ]
+  },
+  {
+    "name": "Matale",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Dambulla"
+      },
+      {
+        "code": "B",
+        "name": "Laggala"
+      },
+      {
+        "code": "C",
+        "name": "Matale"
+      },
+      {
+        "code": "D",
+        "name": "Rattota"
+      }
+    ]
+  },
+  {
+    "name": "Nuwara Eliya",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Nuwara Eliya"
+      },
+      {
+        "code": "B",
+        "name": "Kotmale"
+      },
+      {
+        "code": "C",
+        "name": "Hanguranketha"
+      },
+      {
+        "code": "D",
+        "name": "Walapane"
+      }
+    ]
+  },
+  {
+    "name": "Galle",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Balapitiya"
+      },
+      {
+        "code": "B",
+        "name": "Ambalangoda"
+      },
+      {
+        "code": "C",
+        "name": "Karandeniya"
+      },
+      {
+        "code": "D",
+        "name": "Bentara-Elpitiya"
+      },
+      {
+        "code": "E",
+        "name": "Hiniduma"
+      },
+      {
+        "code": "F",
+        "name": "Baddegama"
+      },
+      {
+        "code": "G",
+        "name": "Ratgama"
+      },
+      {
+        "code": "H",
+        "name": "Galle"
+      },
+      {
+        "code": "I",
+        "name": "Akmeemana"
+      },
+      {
+        "code": "J",
+        "name": "Habaraduwa"
+      }
+    ]
+  },
+  {
+    "name": "Matara",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Deniyaya"
+      },
+      {
+        "code": "B",
+        "name": "Hakmana"
+      },
+      {
+        "code": "C",
+        "name": "Akuressa"
+      },
+      {
+        "code": "D",
+        "name": "Kamburupitiya"
+      },
+      {
+        "code": "E",
+        "name": "Devinuwara"
+      },
+      {
+        "code": "F",
+        "name": "Matara"
+      },
+      {
+        "code": "G",
+        "name": "Weligama"
+      }
+    ]
+  },
+  {
+    "name": "Hambantota",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Mulkirigala"
+      },
+      {
+        "code": "B",
+        "name": "Beliatta"
+      },
+      {
+        "code": "C",
+        "name": "Tangalle"
+      },
+      {
+        "code": "D",
+        "name": "Tissamaharamaya"
+      }
+    ]
+  },
+  {
+    "name": "Jaffna",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Kayts"
+      },
+      {
+        "code": "B",
+        "name": "Waddukkoddai"
+      },
+      {
+        "code": "C",
+        "name": "Kankasanturai"
+      },
+      {
+        "code": "D",
+        "name": "Manipai"
+      },
+      {
+        "code": "E",
+        "name": "Kopai"
+      },
+      {
+        "code": "F",
+        "name": "Uduppidi"
+      },
+      {
+        "code": "G",
+        "name": "Point Pedro"
+      },
+      {
+        "code": "H",
+        "name": "Chawakachcheri"
+      },
+      {
+        "code": "I",
+        "name": "Nallur"
+      },
+      {
+        "code": "J",
+        "name": "Jaffna"
+      },
+      {
+        "code": "K",
+        "name": "Kilinochchi"
+      }
+    ]
+  },
+  {
+    "name": "Vanni",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Mannar"
+      },
+      {
+        "code": "B",
+        "name": "Vavuniya"
+      },
+      {
+        "code": "C",
+        "name": "Mullaitivu"
+      }
+    ]
+  },
+  {
+    "name": "Batticaloa",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Kalkudah"
+      },
+      {
+        "code": "B",
+        "name": "Batticaloa"
+      },
+      {
+        "code": "C",
+        "name": "Padiruppu"
+      }
+    ]
+  },
+  {
+    "name": "Digamadulla",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Ampara"
+      },
+      {
+        "code": "B",
+        "name": "Samanturai"
+      },
+      {
+        "code": "C",
+        "name": "Kalmunai"
+      },
+      {
+        "code": "D",
+        "name": "Potuvil"
+      }
+    ]
+  },
+  {
+    "name": "Trincomalee",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Seruwila"
+      },
+      {
+        "code": "B",
+        "name": "Trincomalee"
+      },
+      {
+        "code": "C",
+        "name": "Mutur"
+      }
+    ]
+  },
+  {
+    "name": "Kurunegala",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Galgamuwa"
+      },
+      {
+        "code": "B",
+        "name": "Nikaweratiya"
+      },
+      {
+        "code": "C",
+        "name": "Yapahuwa"
+      },
+      {
+        "code": "D",
+        "name": "Hiriyala"
+      },
+      {
+        "code": "E",
+        "name": "Wariyapola"
+      },
+      {
+        "code": "F",
+        "name": "Panduwasnuwara"
+      },
+      {
+        "code": "G",
+        "name": "Bingiriya"
+      },
+      {
+        "code": "H",
+        "name": "Katugampola"
+      },
+      {
+        "code": "I",
+        "name": "Kuliyapitiya"
+      },
+      {
+        "code": "J",
+        "name": "Dambadeniya"
+      },
+      {
+        "code": "K",
+        "name": "Polgahawela"
+      },
+      {
+        "code": "L",
+        "name": "Kurunegala"
+      },
+      {
+        "code": "M",
+        "name": "Mawathagama"
+      },
+      {
+        "code": "N",
+        "name": "Dodangaslanda"
+      }
+    ]
+  },
+  {
+    "name": "Puttalam",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Puttalam"
+      },
+      {
+        "code": "B",
+        "name": "Anamaduwa"
+      },
+      {
+        "code": "C",
+        "name": "Chillaw"
+      },
+      {
+        "code": "D",
+        "name": "Nattandiya"
+      },
+      {
+        "code": "E",
+        "name": "Wennappuwa"
+      }
+    ]
+  },
+  {
+    "name": "Anuradhapura",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Medawachchiya"
+      },
+      {
+        "code": "B",
+        "name": "Horowpothana"
+      },
+      {
+        "code": "C",
+        "name": "Anuradhapura East"
+      },
+      {
+        "code": "D",
+        "name": "Anuradhapura West"
+      },
+      {
+        "code": "E",
+        "name": "Kalawewa"
+      },
+      {
+        "code": "F",
+        "name": "Mihintale"
+      },
+      {
+        "code": "G",
+        "name": "Kekirawa"
+      }
+    ]
+  },
+  {
+    "name": "Polonnaruwa",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Minneriya"
+      },
+      {
+        "code": "B",
+        "name": "Medirigiriya"
+      },
+      {
+        "code": "C",
+        "name": "Polonnaruwa"
+      }
+    ]
+  },
+  {
+    "name": "Badulla",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Mahiyanganaya"
+      },
+      {
+        "code": "B",
+        "name": "Wiyaluwa"
+      },
+      {
+        "code": "C",
+        "name": "Passara"
+      },
+      {
+        "code": "D",
+        "name": "Badulla"
+      },
+      {
+        "code": "E",
+        "name": "Hali-Ela"
+      },
+      {
+        "code": "F",
+        "name": "Uva Paranagama"
+      },
+      {
+        "code": "G",
+        "name": "Welimada"
+      },
+      {
+        "code": "H",
+        "name": "Bandarawela"
+      },
+      {
+        "code": "I",
+        "name": "Haputale"
+      }
+    ]
+  },
+  {
+    "name": "Monaragala",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Bibila"
+      },
+      {
+        "code": "B",
+        "name": "Monaragala"
+      },
+      {
+        "code": "C",
+        "name": "Wellawaya"
+      }
+    ]
+  },
+  {
+    "name": "Ratnapura",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Eheliyagoda"
+      },
+      {
+        "code": "B",
+        "name": "Ratnapura"
+      },
+      {
+        "code": "C",
+        "name": "Pelmadulla"
+      },
+      {
+        "code": "D",
+        "name": "Balangoda"
+      },
+      {
+        "code": "E",
+        "name": "Rakwana"
+      },
+      {
+        "code": "F",
+        "name": "Nivithigala"
+      },
+      {
+        "code": "G",
+        "name": "Kalawana"
+      },
+      {
+        "code": "H",
+        "name": "Kolonna"
+      }
+    ]
+  },
+  {
+    "name": "Kegalle",
+    "areas": [
+      {
+        "code": "A",
+        "name": "Dedigama"
+      },
+      {
+        "code": "B",
+        "name": "Galigamuwa"
+      },
+      {
+        "code": "C",
+        "name": "Kegalle"
+      },
+      {
+        "code": "D",
+        "name": "Rambukkana"
+      },
+      {
+        "code": "E",
+        "name": "Mawanella"
+      },
+      {
+        "code": "F",
+        "name": "Aranayake"
+      },
+      {
+        "code": "G",
+        "name": "Yatiyantota"
+      },
+      {
+        "code": "H",
+        "name": "Ruwanwella"
+      },
+      {
+        "code": "I",
+        "name": "Deraniyagala"
+      }
+    ]
+  }
+]
