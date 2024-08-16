@@ -3,6 +3,7 @@ import Sidebar from '../shared/sidebar';
 import Header from '../shared/header';
 import MobileSidebar from '../shared/mobile-sidebar';
 import { MenuIcon } from 'lucide-react';
+import { LanguageProvider } from './lang-ctx';
 
 export default function DashboardLayout({
   children
@@ -12,6 +13,7 @@ export default function DashboardLayout({
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   return (
+   <LanguageProvider>
     <div className="flex h-screen overflow-hidden bg-secondary">
       <MobileSidebar
         sidebarOpen={sidebarOpen}
@@ -29,10 +31,11 @@ export default function DashboardLayout({
           </button>
           <Header />
         </div>
-        <main className="relative mx-2 my-3 mr-2 flex-1 overflow-hidden overflow-y-auto rounded-xl  bg-background focus:outline-none md:mx-0 md:my-4 md:mr-4 ">
+        <main className="relative mx-2 my-3 mr-2 flex-1 overflow-hidden overflow-y-auto rounded-xl bg-background focus:outline-none md:mx-0 md:my-4 md:mr-4">
           {children}
         </main>
       </div>
     </div>
+    </LanguageProvider>
   );
 }
