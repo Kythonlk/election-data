@@ -1,0 +1,934 @@
+[
+    {
+      "name": "Colombo",
+      "sinhalaName": "කොළඹ",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Colombo North",
+          "sinhalaName": "කොළඹ උතුර"
+        },
+        {
+          "code": "B",
+          "name": "Colombo Central",
+          "sinhalaName": "කොළඹ මධ්‍යම"
+        },
+        {
+          "code": "C",
+          "name": "Borella",
+          "sinhalaName": "බොරැල්ල"
+        },
+        {
+          "code": "D",
+          "name": "Colombo East",
+          "sinhalaName": "කොළඹ නැගෙනහිර"
+        },
+        {
+          "code": "E",
+          "name": "Colombo West",
+          "sinhalaName": "කොළඹ බටහිර"
+        },
+        {
+          "code": "F",
+          "name": "Dehiwala",
+          "sinhalaName": "දෙහිවල"
+        },
+        {
+          "code": "G",
+          "name": "Ratmalana",
+          "sinhalaName": "රත්මලාන"
+        },
+        {
+          "code": "H",
+          "name": "Kolonnawa",
+          "sinhalaName": "කොළොන්නාව"
+        },
+        {
+          "code": "I",
+          "name": "Kotte",
+          "sinhalaName": "කෝට්ටේ"
+        },
+        {
+          "code": "J",
+          "name": "Kaduwela",
+          "sinhalaName": "කඩුවෙල"
+        },
+        {
+          "code": "K",
+          "name": "Avissawella",
+          "sinhalaName": "අවිස්සාවේල්ල"
+        },
+        {
+          "code": "L",
+          "name": "Homagama",
+          "sinhalaName": "හෝමාගම"
+        },
+        {
+          "code": "M",
+          "name": "Maharagama",
+          "sinhalaName": "මහරගම"
+        },
+        {
+          "code": "N",
+          "name": "Kesbewa",
+          "sinhalaName": "කැස්බෑව"
+        },
+        {
+          "code": "O",
+          "name": "Moratuwa",
+          "sinhalaName": "මොරටුව"
+        }
+      ]
+    },
+    {
+      "name": "Gampaha",
+      "sinhalaName": "ගම්පහ",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Wattala",
+          "sinhalaName": "වත්තල"
+        },
+        {
+          "code": "B",
+          "name": "Negombo",
+          "sinhalaName": "මීගමුව"
+        },
+        {
+          "code": "C",
+          "name": "Katana",
+          "sinhalaName": "කටාන"
+        },
+        {
+          "code": "D",
+          "name": "Divulapitiya",
+          "sinhalaName": "දිවුලපිටිය"
+        },
+        {
+          "code": "E",
+          "name": "Mirigama",
+          "sinhalaName": "මිරිගම"
+        },
+        {
+          "code": "F",
+          "name": "Minuwangoda",
+          "sinhalaName": "මිනුවන්ගොඩ"
+        },
+        {
+          "code": "G",
+          "name": "Attanagalla",
+          "sinhalaName": "අත්තනගල්ල"
+        },
+        {
+          "code": "H",
+          "name": "Gampaha",
+          "sinhalaName": "ගම්පහ"
+        },
+        {
+          "code": "I",
+          "name": "Ja-Ela",
+          "sinhalaName": "ජා-ඇල"
+        },
+        {
+          "code": "J",
+          "name": "Mahara",
+          "sinhalaName": "මාහර"
+        },
+        {
+          "code": "K",
+          "name": "Dompe",
+          "sinhalaName": "දොම්පෙ"
+        },
+        {
+          "code": "L",
+          "name": "Biyagama",
+          "sinhalaName": "බියගම"
+        },
+        {
+          "code": "M",
+          "name": "Kelaniya",
+          "sinhalaName": "කැලණිය"
+        }
+      ]
+    },
+    {
+      "name": "Kalutara",
+      "sinhalaName": "කළුතර",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Panadura",
+          "sinhalaName": "පානදුර"
+        },
+        {
+          "code": "B",
+          "name": "Bandaragama",
+          "sinhalaName": "බණ්ඩාරගම"
+        },
+        {
+          "code": "C",
+          "name": "Horana",
+          "sinhalaName": "හොරණ"
+        },
+        {
+          "code": "D",
+          "name": "Bulathsinhala",
+          "sinhalaName": "බුලත්සිංහල"
+        },
+        {
+          "code": "E",
+          "name": "Matugama",
+          "sinhalaName": "මතුගම"
+        },
+        {
+          "code": "F",
+          "name": "Kalutara",
+          "sinhalaName": "කළුතර"
+        },
+        {
+          "code": "G",
+          "name": "Beruwala",
+          "sinhalaName": "බේරුවල"
+        },
+        {
+          "code": "H",
+          "name": "Agalawatta",
+          "sinhalaName": "අගලවත්ත"
+        }
+      ]
+    },
+    {
+      "name": "Kandy",
+      "sinhalaName": "මහනුවර",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Galagedara",
+          "sinhalaName": "ගලගෙදර"
+        },
+        {
+          "code": "B",
+          "name": "Harispattuwa",
+          "sinhalaName": "හාරිස්පත්තුව"
+        },
+        {
+          "code": "C",
+          "name": "Pathadumbara",
+          "sinhalaName": "පස්දුම්බර"
+        },
+        {
+          "code": "D",
+          "name": "Udadumbara",
+          "sinhalaName": "උඩදුම්බර"
+        },
+        {
+          "code": "E",
+          "name": "Teldeniya",
+          "sinhalaName": "තෙල්දෙණිය"
+        },
+        {
+          "code": "F",
+          "name": "Kundasale",
+          "sinhalaName": "කුණ්ඩසාලේ"
+        },
+        {
+          "code": "G",
+          "name": "Hewaheta",
+          "sinhalaName": "හෙවාහැට"
+        },
+        {
+          "code": "H",
+          "name": "Senkadagala",
+          "sinhalaName": "සෙංකඩගල"
+        },
+        {
+          "code": "I",
+          "name": "Kandy",
+          "sinhalaName": "මහනුවර"
+        },
+        {
+          "code": "J",
+          "name": "Yatinuwara",
+          "sinhalaName": "යටිනුවර"
+        },
+        {
+          "code": "K",
+          "name": "Udanuwara",
+          "sinhalaName": "උඩනුවර"
+        },
+        {
+          "code": "L",
+          "name": "Gampola",
+          "sinhalaName": "ගම්පොල"
+        },
+        {
+          "code": "M",
+          "name": "Nawalapitiya",
+          "sinhalaName": "නාවලපිටිය"
+        }
+      ]
+    },
+    {
+      "name": "Matale",
+      "sinhalaName": "මාතලේ",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Dambulla",
+          "sinhalaName": "දඹුල්ල"
+        },
+        {
+          "code": "B",
+          "name": "Laggala",
+          "sinhalaName": "ලග්ගල"
+        },
+        {
+          "code": "C",
+          "name": "Matale",
+          "sinhalaName": "මාතලේ"
+        },
+        {
+          "code": "D",
+          "name": "Rattota",
+          "sinhalaName": "රත්තොට"
+        }
+      ]
+    },
+    {
+      "name": "Nuwara Eliya",
+      "sinhalaName": "නුවරඑළිය",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Nuwara Eliya",
+          "sinhalaName": "නුවරඑළිය"
+        },
+        {
+          "code": "B",
+          "name": "Kotmale",
+          "sinhalaName": "කොත්මලේ"
+        },
+        {
+          "code": "C",
+          "name": "Hanguranketha",
+          "sinhalaName": "හඟුරන්කෙත"
+        },
+        {
+          "code": "D",
+          "name": "Walapane",
+          "sinhalaName": "වලපනේ"
+        }
+      ]
+    },
+    {
+      "name": "Galle",
+      "sinhalaName": "ගාල්ල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Balapitiya",
+          "sinhalaName": "බලපිටිය"
+        },
+        {
+          "code": "B",
+          "name": "Ambalangoda",
+          "sinhalaName": "අම්බලන්ගොඩ"
+        },
+        {
+          "code": "C",
+          "name": "Karandeniya",
+          "sinhalaName": "කරන්දෙණිය"
+        },
+        {
+          "code": "D",
+          "name": "Bentara-Elpitiya",
+          "sinhalaName": "බෙන්තර-ඇල්පිටිය"
+        },
+        {
+          "code": "E",
+          "name": "Hiniduma",
+          "sinhalaName": "හිනිදුම"
+        },
+        {
+          "code": "F",
+          "name": "Baddegama",
+          "sinhalaName": "බද්දේගම"
+        },
+        {
+          "code": "G",
+          "name": "Ratgama",
+          "sinhalaName": "රත්ගම"
+        },
+        {
+          "code": "H",
+          "name": "Galle",
+          "sinhalaName": "ගාල්ල"
+        },
+        {
+          "code": "I",
+          "name": "Akmeemana",
+          "sinhalaName": "අක්මීමන"
+        },
+        {
+          "code": "J",
+          "name": "Habaraduwa",
+          "sinhalaName": "හබරාදුව"
+        }
+      ]
+    },
+    {
+      "name": "Matara",
+      "sinhalaName": "මාතර",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Deniyaya",
+          "sinhalaName": "දෙණියාය"
+        },
+        {
+          "code": "B",
+          "name": "Hakmana",
+          "sinhalaName": "හක්මන"
+        },
+        {
+          "code": "C",
+          "name": "Akuressa",
+          "sinhalaName": "අකුරස්ස"
+        },
+        {
+          "code": "D",
+          "name": "Kamburupitiya",
+          "sinhalaName": "කඹුරුපිටිය"
+        },
+        {
+          "code": "E",
+          "name": "Devinuwara",
+          "sinhalaName": "දෙවිනුවර"
+        },
+        {
+          "code": "F",
+          "name": "Matara",
+          "sinhalaName": "මාතර"
+        },
+        {
+          "code": "G",
+          "name": "Weligama",
+          "sinhalaName": "වැලිගම"
+        }
+      ]
+    },
+    {
+      "name": "Hambantota",
+      "sinhalaName": "හම්බන්තොට",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Mulkirigala",
+          "sinhalaName": "මුල්කිරිගල"
+        },
+        {
+          "code": "B",
+          "name": "Beliatta",
+          "sinhalaName": "බෙලිහුල්ඔය"
+        },
+        {
+          "code": "C",
+          "name": "Tangalle",
+          "sinhalaName": "තංගල්ල"
+        },
+        {
+          "code": "D",
+          "name": "Tissamaharamaya",
+          "sinhalaName": "තිස්සමහාරාමය"
+        }
+      ]
+    },
+    {
+      "name": "Jaffna",
+      "sinhalaName": "යාපනය",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Kayts",
+          "sinhalaName": "කයිට්ස්"
+        },
+        {
+          "code": "B",
+          "name": "Waddukkoddai",
+          "sinhalaName": "වඩ්ඩුක්කොඩයි"
+        },
+        {
+          "code": "C",
+          "name": "Kankasanturai",
+          "sinhalaName": "කන්කසන්තුරේ"
+        },
+        {
+          "code": "D",
+          "name": "Manipai",
+          "sinhalaName": "මනිපායි"
+        },
+        {
+          "code": "E",
+          "name": "Kopai",
+          "sinhalaName": "කෝපායි"
+        },
+        {
+          "code": "F",
+          "name": "Uduppidi",
+          "sinhalaName": "උඩුප්පිඩ්ඩි"
+        },
+        {
+          "code": "G",
+          "name": "Point Pedro",
+          "sinhalaName": "පේදුරුතුඩු"
+        },
+        {
+          "code": "H",
+          "name": "Chawakachcheri",
+          "sinhalaName": "චවකච්චේරි"
+        },
+        {
+          "code": "I",
+          "name": "Nallur",
+          "sinhalaName": "නල්ලූර්"
+        },
+        {
+          "code": "J",
+          "name": "Jaffna",
+          "sinhalaName": "යාපනය"
+        },
+        {
+          "code": "K",
+          "name": "Kilinochchi",
+          "sinhalaName": "කිලිනොච්චි"
+        }
+      ]
+    },
+    {
+      "name": "Vanni",
+      "sinhalaName": "වන්නි",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Mannar",
+          "sinhalaName": "මන්නාරම"
+        },
+        {
+          "code": "B",
+          "name": "Vavuniya",
+          "sinhalaName": "වවුනියාව"
+        },
+        {
+          "code": "C",
+          "name": "Mullaitivu",
+          "sinhalaName": "මුලතිව්"
+        }
+      ]
+    },
+    {
+      "name": "Batticaloa",
+      "sinhalaName": "මඩකලපුව",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Kalkudah",
+          "sinhalaName": "කල්කුඩා"
+        },
+        {
+          "code": "B",
+          "name": "Batticaloa",
+          "sinhalaName": "මඩකලපුව"
+        },
+        {
+          "code": "C",
+          "name": "Padiruppu",
+          "sinhalaName": "පදිರುප්පු"
+        }
+      ]
+    },
+    {
+      "name": "Digamadulla",
+      "sinhalaName": "දිගාමඩුල්ල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Ampara",
+          "sinhalaName": "අම්පාර"
+        },
+        {
+          "code": "B",
+          "name": "Samanturai",
+          "sinhalaName": "සමන්තුරේ"
+        },
+        {
+          "code": "C",
+          "name": "Kalmunai",
+          "sinhalaName": "කල්මුනේ"
+        },
+        {
+          "code": "D",
+          "name": "Potuvil",
+          "sinhalaName": "පොතුවිල්"
+        }
+      ]
+    },
+    {
+      "name": "Trincomalee",
+      "sinhalaName": "ත්රිකුණාමලය",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Seruwila",
+          "sinhalaName": "සේරුවිල"
+        },
+        {
+          "code": "B",
+          "name": "Trincomalee",
+          "sinhalaName": "ත්රිකුණාමලය"
+        },
+        {
+          "code": "C",
+          "name": "Mutur",
+          "sinhalaName": "මුතූර්"
+        }
+      ]
+    },
+    {
+      "name": "Kurunegala",
+      "sinhalaName": "කුරුණෑගල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Galgamuwa",
+          "sinhalaName": "ගල්ගමුව"
+        },
+        {
+          "code": "B",
+          "name": "Nikaweratiya",
+          "sinhalaName": "නිකවැරටිය"
+        },
+        {
+          "code": "C",
+          "name": "Yapahuwa",
+          "sinhalaName": "යාපහුව"
+        },
+        {
+          "code": "D",
+          "name": "Hiriyala",
+          "sinhalaName": "හිරියාල"
+        },
+        {
+          "code": "E",
+          "name": "Wariyapola",
+          "sinhalaName": "වාරියපොළ"
+        },
+        {
+          "code": "F",
+          "name": "Panduwasnuwara",
+          "sinhalaName": "පඬුවස්නුවර"
+        },
+        {
+          "code": "G",
+          "name": "Bingiriya",
+          "sinhalaName": "බිංගිරිය"
+        },
+        {
+          "code": "H",
+          "name": "Katugampola",
+          "sinhalaName": "කටුගම්පොළ"
+        },
+        {
+          "code": "I",
+          "name": "Kuliyapitiya",
+          "sinhalaName": "කුලියාපිටිය"
+        },
+        {
+          "code": "J",
+          "name": "Dambadeniya",
+          "sinhalaName": "දඹදෙණිය"
+        },
+        {
+          "code": "K",
+          "name": "Polgahawela",
+          "sinhalaName": "පොල්ගහවෙල"
+        },
+        {
+          "code": "L",
+          "name": "Kurunegala",
+          "sinhalaName": "කුරුණෑගල"
+        },
+        {
+          "code": "M",
+          "name": "Mawathagama",
+          "sinhalaName": "මාවතගම"
+        },
+        {
+          "code": "N",
+          "name": "Dodangaslanda",
+          "sinhalaName": "දොඩංගස්ලන්ද"
+        }
+      ]
+    },
+    {
+      "name": "Puttalam",
+      "sinhalaName": "පුත්තලම",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Puttalam",
+          "sinhalaName": "පුත්තලම"
+        },
+        {
+          "code": "B",
+          "name": "Anamaduwa",
+          "sinhalaName": "ආණමඩුව"
+        },
+        {
+          "code": "C",
+          "name": "Chillaw",
+          "sinhalaName": "චිලාව"
+        },
+        {
+          "code": "D",
+          "name": "Nattandiya",
+          "sinhalaName": "නැත්තන්ඩිය"
+        },
+        {
+          "code": "E",
+          "name": "Wennappuwa",
+          "sinhalaName": "වෙන්නප්පුව"
+        }
+      ]
+    },
+    {
+      "name": "Anuradhapura",
+      "sinhalaName": "අනුරාධපුරය",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Medawachchiya",
+          "sinhalaName": "මැදවච්චිය"
+        },
+        {
+          "code": "B",
+          "name": "Horowpothana",
+          "sinhalaName": "හොරොව්පොතාන"
+        },
+        {
+          "code": "C",
+          "name": "Anuradhapura East",
+          "sinhalaName": "අනුරාධපුර නැගෙනහිර"
+        },
+        {
+          "code": "D",
+          "name": "Anuradhapura West",
+          "sinhalaName": "අනුරාධපුර බටහිර"
+        },
+        {
+          "code": "E",
+          "name": "Kalawewa",
+          "sinhalaName": "කලා වැව"
+        },
+        {
+          "code": "F",
+          "name": "Mihintale",
+          "sinhalaName": "මිහින්තලේ"
+        },
+        {
+          "code": "G",
+          "name": "Kekirawa",
+          "sinhalaName": "කැකිරාව"
+        }
+      ]
+    },
+    {
+      "name": "Polonnaruwa",
+      "sinhalaName": "පොළොන්නරුව",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Minneriya",
+          "sinhalaName": "මින්නේරිය"
+        },
+        {
+          "code": "B",
+          "name": "Medirigiriya",
+          "sinhalaName": "මැදිරිගිරිය"
+        },
+        {
+          "code": "C",
+          "name": "Polonnaruwa",
+          "sinhalaName": "පොළොන්නරුව"
+        }
+      ]
+    },
+    {
+      "name": "Badulla",
+      "sinhalaName": "බදුල්ල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Mahiyanganaya",
+          "sinhalaName": "මහියංගනය"
+        },
+        {
+          "code": "B",
+          "name": "Wiyaluwa",
+          "sinhalaName": "වියළුව"
+        },
+        {
+          "code": "C",
+          "name": "Passara",
+          "sinhalaName": "පස්සර"
+        },
+        {
+          "code": "D",
+          "name": "Badulla",
+          "sinhalaName": "බදුල්ල"
+        },
+        {
+          "code": "E",
+          "name": "Hali-Ela",
+          "sinhalaName": "හාලි-ඇල"
+        },
+        {
+          "code": "F",
+          "name": "Uva Paranagama",
+          "sinhalaName": "ඌව පරණගම"
+        },
+        {
+          "code": "G",
+          "name": "Welimada",
+          "sinhalaName": "වැලිමඩ"
+        },
+        {
+          "code": "H",
+          "name": "Bandarawela",
+          "sinhalaName": "බණ්ඩාරවෙල"
+        },
+        {
+          "code": "I",
+          "name": "Haputale",
+          "sinhalaName": "හපුතලේ"
+        }
+      ]
+    },
+    {
+      "name": "Monaragala",
+      "sinhalaName": "මොණරාගල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Bibila",
+          "sinhalaName": "බිබිල"
+        },
+        {
+          "code": "B",
+          "name": "Monaragala",
+          "sinhalaName": "මොණරාගල"
+        },
+        {
+          "code": "C",
+          "name": "Wellawaya",
+          "sinhalaName": "වැල්ලවාය"
+        }
+      ]
+    },
+    {
+      "name": "Ratnapura",
+      "sinhalaName": "රත්නපුර",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Eheliyagoda",
+          "sinhalaName": "ඇහැලියගොඩ"
+        },
+        {
+          "code": "B",
+          "name": "Ratnapura",
+          "sinhalaName": "රත්නපුර"
+        },
+        {
+          "code": "C",
+          "name": "Pelmadulla",
+          "sinhalaName": "පැල්මඩුල්ල"
+        },
+        {
+          "code": "D",
+          "name": "Balangoda",
+          "sinhalaName": "බලංගොඩ"
+        },
+        {
+          "code": "E",
+          "name": "Rakwana",
+          "sinhalaName": "රක්වාන"
+        },
+        {
+          "code": "F",
+          "name": "Nivithigala",
+          "sinhalaName": "නිවිතිගල"
+        },
+        {
+          "code": "G",
+          "name": "Kalawana",
+          "sinhalaName": "කලවාන"
+        },
+        {
+          "code": "H",
+          "name": "Kolonna",
+          "sinhalaName": "කොළොන්න"
+        }
+      ]
+    },
+    {
+      "name": "Kegalle",
+      "sinhalaName": "කෑගල්ල",
+      "areas": [
+        {
+          "code": "A",
+          "name": "Dedigama",
+          "sinhalaName": "දැදිගම"
+        },
+        {
+          "code": "B",
+          "name": "Galigamuwa",
+          "sinhalaName": "ගලිගමුව"
+        },
+        {
+          "code": "C",
+          "name": "Kegalle",
+          "sinhalaName": "කෑගල්ල"
+        },
+        {
+          "code": "D",
+          "name": "Rambukkana",
+          "sinhalaName": "රඹුක්කන"
+        },
+        {
+          "code": "E",
+          "name": "Mawanella",
+          "sinhalaName": "මාවනැල්ල"
+        },
+        {
+          "code": "F",
+          "name": "Aranayake",
+          "sinhalaName": "අරණායක"
+        },
+        {
+          "code": "G",
+          "name": "Yatiyantota",
+          "sinhalaName": "යටියන්තොට"
+        },
+        {
+          "code": "H",
+          "name": "Ruwanwella",
+          "sinhalaName": "රුවන්වැල්ල"
+        },
+        {
+          "code": "I",
+          "name": "Deraniyagala",
+          "sinhalaName": "දෙරණියගල"
+        }
+      ]
+    }
+  ]

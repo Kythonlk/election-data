@@ -10,7 +10,6 @@ const ElectionPage = () => {
   const [selectedDistrict, setSelectedDistrict] = useState<any>(null);
   const { language } = useLanguage();
 
-
   const handleRowClick = (district: any) => {
     setSelectedDistrict(district);
   };
@@ -35,20 +34,27 @@ const ElectionPage = () => {
   return (
     <div className="w-full py-8">
       <div className="relative overflow-x-auto">
-      {!selectedDistrict ? (
-        <DataTable
-          columns={language ? siColumns : columns}
-          fetchData={fetchElectionData}
-          onRowClick={handleRowClick}
-        /> ) : (
+        {!selectedDistrict ? (
+          <>
+            <h2 className="p-1 text-lg font-semibold">Election Complaints</h2>
+            <DataTable
+              columns={language ? siColumns : columns}
+              fetchData={fetchElectionData}
+              onRowClick={handleRowClick}
+            />
+          </>
+        ) : (
           <div>
-            <button onClick={handleBackClick} className="mb-4 py-1 px-2 bg-gray-200 text-gray-900 rounded-md">
+            <button
+              onClick={handleBackClick}
+              className="mb-4 rounded-md bg-gray-200 px-2 py-1 text-gray-900"
+            >
               Back to All Districts
             </button>
             <h2 className="text-lg font-semibold">
               {language ? selectedDistrict.sinhalaName : selectedDistrict.name}
             </h2>
-            <table className="w-full mt-4 text-sm">
+            <table className="mt-4 w-full text-sm">
               <thead>
                 <tr className="border-b">
                   <th className="h-10 px-2 text-left font-medium text-muted-foreground">

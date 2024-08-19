@@ -17,9 +17,10 @@ const electionData = [
     }
   ];
   
-  const districts = [
+const districts = [
     {
       "name": "Colombo",
+      "sinhalaName": "කොළඹ",
       "leadingCandidate": "",
       "party": "",
       "votes": 5000,
@@ -29,6 +30,7 @@ const electionData = [
     },
     {
       "name": "Galle",
+      "sinhalaName": "ගාල්ල",
       "leadingCandidate": "",
       "party": "",
       "votes": 3200,
@@ -38,6 +40,7 @@ const electionData = [
     },
     {
       "name": "Kandy",
+      "sinhalaName": "මහනුවර",
       "leadingCandidate": "",
       "party": "",
       "votes": 2100,
@@ -47,6 +50,7 @@ const electionData = [
     },
     {
       "name": "Jaffna",
+      "sinhalaName": "යාපනය",
       "leadingCandidate": "",
       "party": "",
       "votes": 6450,
@@ -56,6 +60,7 @@ const electionData = [
     },
     {
       "name": "Matara",
+      "sinhalaName": "මාතර",
       "leadingCandidate": "",
       "party": "",
       "votes": 3980,
@@ -65,6 +70,7 @@ const electionData = [
     },
     {
       "name": "Gampaha",
+      "sinhalaName": "ගම්පහ",
       "leadingCandidate": "", 
       "party": "",           
       "votes": 0,             
@@ -74,6 +80,7 @@ const electionData = [
     },
     {
       "name": "Kalutara",
+      "sinhalaName": "කළුතර",
       "leadingCandidate": "", 
       "party": "",           
       "votes": 0,            
@@ -82,7 +89,8 @@ const electionData = [
       "color": "#1f77b4"
     },
     {
-      "name": "Mahanuwara",
+      "name": "Kandy", 
+      "sinhalaName": "මහනුවර",
       "leadingCandidate": "", 
       "party": "",           
       "votes": 0,           
@@ -92,6 +100,7 @@ const electionData = [
     },
     {
       "name": "Nuwara Eliya",
+      "sinhalaName": "නුවරඑළිය",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -101,6 +110,7 @@ const electionData = [
     },
     {
       "name": "Matale",
+      "sinhalaName": "මාතලේ",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -110,6 +120,7 @@ const electionData = [
     },
     {
       "name": "Hambantota",
+      "sinhalaName": "හම්බන්තොට",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -119,6 +130,7 @@ const electionData = [
     },
     {
       "name": "Vavuniya", 
+      "sinhalaName": "වවුනියාව",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -128,6 +140,7 @@ const electionData = [
     },
     {
       "name": "Batticaloa",
+      "sinhalaName": "මඩකලපුව",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -136,7 +149,8 @@ const electionData = [
       "color": "#ff8504"
     },
     {
-      "name": "Digamadulla",
+      "name": "Digamadulla", 
+      "sinhalaName": "දිගාමඩුල්ල",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -146,6 +160,7 @@ const electionData = [
     },
     {
       "name": "Trincomalee",
+      "sinhalaName": "ත්‍රිකුණාමලය",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -155,6 +170,7 @@ const electionData = [
     },
     {
       "name": "Kurunegala",
+      "sinhalaName": "කුරුණෑගල",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -164,6 +180,7 @@ const electionData = [
     },
     {
       "name": "Puttalam",
+      "sinhalaName": "පුත්තලම",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -173,6 +190,7 @@ const electionData = [
     },
     {
       "name": "Anuradhapura",
+      "sinhalaName": "අනුරාධපුරය",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -182,6 +200,7 @@ const electionData = [
     },
     {
       "name": "Polonnaruwa",
+      "sinhalaName": "පොළොන්නරුව",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -191,6 +210,7 @@ const electionData = [
     },
     {
       "name": "Badulla",
+      "sinhalaName": "බදුල්ල",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -200,6 +220,7 @@ const electionData = [
     },
     {
       "name": "Moneragala",
+      "sinhalaName": "මොණරාගල",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -209,6 +230,7 @@ const electionData = [
     },
     {
       "name": "Ratnapura",
+      "sinhalaName": "රත්නපුර",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
@@ -218,6 +240,7 @@ const electionData = [
     },
     {
       "name": "Kegalle",
+      "sinhalaName": "කෑගල්ල",
       "leadingCandidate": "",
       "party": "",
       "votes": 0,
